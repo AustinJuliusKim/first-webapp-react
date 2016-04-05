@@ -4,7 +4,7 @@ var Search = require('./Search');
 var Map = require('./Map');
 var CurrentLocation = require('./CurrentLocation');
 var LocationList = require('./LocationList');
-
+var Share = require('./Share');
 
 var App = React.createClass({
 
@@ -74,7 +74,7 @@ var App = React.createClass({
 		// If it was found, remove it from the favorites array
 
 		if(index !== -1){
-			
+
 			favorites.splice(index, 1);
 
 			this.setState({
@@ -102,7 +102,7 @@ var App = React.createClass({
 	},
 
 	searchForAddress(address){
-		
+
 		var self = this;
 
 		// We will use GMaps' geocode functionality,
@@ -140,12 +140,14 @@ var App = React.createClass({
 
 				<Map lat={this.state.mapCoordinates.lat} lng={this.state.mapCoordinates.lng} />
 
-				<CurrentLocation address={this.state.currentAddress} 
-					favorite={this.isAddressInFavorites(this.state.currentAddress)} 
+				<CurrentLocation address={this.state.currentAddress}
+					favorite={this.isAddressInFavorites(this.state.currentAddress)}
 					onFavoriteToggle={this.toggleFavorite} />
 
-				<LocationList locations={this.state.favorites} activeLocationAddress={this.state.currentAddress} 
+				<LocationList locations={this.state.favorites} activeLocationAddress={this.state.currentAddress}
 					onClick={this.searchForAddress} />
+
+				<Share />
 
 			</div>
 

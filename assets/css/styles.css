@@ -41,7 +41,7 @@ h1 {
 	line-height: 1.4;
 }
 
-.current-location .glyphicon-star, 
+.current-location .glyphicon-star,
 .current-location .glyphicon-star-empty {
 	display: inline-block;
 	margin-left: 10px;
@@ -112,4 +112,8 @@ a.list-group-item span.createdAt {
 	display: block;
 	color: #969FA8;
 	z-index: -1;
+}
+
+a.fb-share-button {
+	
 }
